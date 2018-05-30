@@ -1,14 +1,8 @@
 # Etherpad Lite image for docker
 
-This is a docker image for [Etherpad Lite](http://etherpad.org/) collaborative
-text editor. The Dockerfile for this image has been inspired by the
-[official Wordpress](https://registry.hub.docker.com/_/wordpress/) Dockerfile and
-[johbo's etherpad-lite](https://registry.hub.docker.com/u/johbo/etherpad-lite/)
-image.
+This is a docker image for [Etherpad Lite](http://etherpad.org/) collaborative text editor. The Dockerfile for this image has been inspired by the [official Wordpress](https://registry.hub.docker.com/_/wordpress/) Dockerfile, [johbo's etherpad-lite](https://registry.hub.docker.com/u/johbo/etherpad-lite/) image and [tvelocity's etherpad-lite](https://github.com/tvelocity/dockerfiles) image.
 
-This image uses a database (mysql or postgres) container for the backend for
-the pads. It is based on debian jessie instead of the official node docker
-image, since the latest stable version of etherpad-lite does not support npm 2.
+This image uses a database (mysql or postgres) container for the backend for the pads. It is based on debian jessie instead of the official node docker image, since the latest stable version of etherpad-lite does not support npm 2.
 
 ## About Etherpad Lite
 
@@ -39,12 +33,10 @@ $ docker run -d \
     -e ETHERPAD_DB_HOST=ep_mysql \
     -e ETHERPAD_DB_PASSWORD=password \
     -p 9001:9001 \
-    tvelocity/etherpad-lite
+    kifu/etherpad
 ```
 
-Etherpad will automatically create an `etherpad` database in the specified mysql
-server if it does not already exist.
-You can now access Etherpad Lite from http://localhost:9001/
+Etherpad will automatically create an `etherpad` database in the specified mysql server if it does not already exist. You can now access Etherpad Lite from http://localhost:9001/
 
 ## Environment variables
 
